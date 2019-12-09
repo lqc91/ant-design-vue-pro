@@ -9,6 +9,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/user",
+    hideInMenu: true,
     component: () =>
       import(/* webpackChunkName: "layout" */ "../layouts/UserLayout"),
     children: [
@@ -32,7 +33,7 @@ const routes = [
   },
   {
     path: "/",
-    meta: { authority: ["user", "admin"] },
+    // meta: { authority: ["user", "admin"] },
     component: () =>
       import(/* webpackChunkName: "layout" */ "../layouts/BasicLayout"),
     children: [
@@ -117,6 +118,7 @@ const routes = [
   {
     path: "*",
     name: "404",
+    hideInMenu: true,
     component: NotFound
   }
 ];
